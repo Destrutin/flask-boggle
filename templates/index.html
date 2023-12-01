@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boggle Game</title>
+  </head>
+  <body>
+    <table class="board">
+      <tbody>
+        {% for row in board %}
+        <tr>
+          {% for cell in row %}
+          <td>{{cell}}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="timer">Time Remaining: 60s</div>
+
+    <form method="POST" class="guess-form">
+      <input type="text" name="guess" class="guess" required />
+      <button>Submit Guess</button>
+    </form>
+
+    <div class="message"></div>
+
+    <div class="score">Score: 0</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
